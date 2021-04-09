@@ -1,0 +1,194 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/textures/Black_King.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/Board.png" type="Texture" id=2]
+[ext_resource path="res://assets/scripts/User_Interface.gd" type="Script" id=3]
+[ext_resource path="res://assets/Pixel_Font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/audio/Tap.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/textures/Pause_Button.png" type="Texture" id=7]
+[ext_resource path="res://assets/textures/Pause_Button_Pressed.png" type="Texture" id=8]
+[ext_resource path="res://assets/textures/Button_Pressed.png" type="Texture" id=9]
+[ext_resource path="res://assets/textures/Button.png" type="Texture" id=10]
+[ext_resource path="res://assets/scripts/Board.gd" type="Script" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 84, 84 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Board" type="Area2D" parent="."]
+position = Vector2( 16, 11.9221 )
+z_index = -4
+script = ExtResource( 11 )
+piece_queue = [ 3, 5, 1, 1 ]
+player_coords = Vector2( 6, 1 )
+king_coords = Vector2( 4, 6 )
+
+[node name="Board_Collision" type="CollisionShape2D" parent="Board"]
+position = Vector2( 84, 84 )
+shape = SubResource( 1 )
+
+[node name="Board_Sprite" type="Sprite" parent="Board"]
+position = Vector2( 84, 84 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 3, 3, 168, 168 )
+
+[node name="Player_Sprite" type="Sprite" parent="Board"]
+position = Vector2( 8, 8 )
+z_index = 1
+region_rect = Rect2( 63, 3, 13, 13 )
+
+[node name="King_Sprite" type="Sprite" parent="Board"]
+z_index = 1
+texture = ExtResource( 1 )
+
+[node name="Queue_Sprite" type="Sprite" parent="Board"]
+position = Vector2( 198.5, 84 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 3, 3, 21, 168 )
+
+[node name="Tap" type="AudioStreamPlayer" parent="Board"]
+stream = ExtResource( 6 )
+
+[node name="User_Interface" type="Control" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Control" parent="User_Interface"]
+pause_mode = 2
+visible = false
+margin_left = 60.0
+margin_top = 45.0
+margin_right = 180.0
+margin_bottom = 135.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="User_Interface/Menu"]
+margin_right = 120.0
+margin_bottom = 90.0
+color = Color( 0.513726, 0.345098, 0.392157, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="User_Interface/Menu"]
+margin_right = 120.0
+margin_bottom = 90.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="TextureButton" parent="User_Interface/Menu/VBoxContainer"]
+margin_left = 37.0
+margin_top = 18.0
+margin_right = 82.0
+margin_bottom = 33.0
+rect_min_size = Vector2( 45, 15 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 9 )
+expand = true
+
+[node name="Label" type="Label" parent="User_Interface/Menu/VBoxContainer/Resume"]
+margin_left = -3.16228
+margin_top = 2.25231
+margin_right = 48.8377
+margin_bottom = 16.2523
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.513726, 0.345098, 0.392157, 1 )
+text = "Resume"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="TextureButton" parent="User_Interface/Menu/VBoxContainer"]
+margin_left = 37.0
+margin_top = 37.0
+margin_right = 82.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 45, 15 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 9 )
+expand = true
+
+[node name="Label" type="Label" parent="User_Interface/Menu/VBoxContainer/Restart"]
+margin_left = 2.83655
+margin_top = 2.50283
+margin_right = 42.8365
+margin_bottom = 16.5028
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.513726, 0.345098, 0.392157, 1 )
+text = "Restart"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="TextureButton" parent="User_Interface/Menu/VBoxContainer"]
+margin_left = 37.0
+margin_top = 56.0
+margin_right = 82.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 45, 15 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 9 )
+expand = true
+
+[node name="Label" type="Label" parent="User_Interface/Menu/VBoxContainer/Quit"]
+margin_left = 3.15336
+margin_top = 1.68179
+margin_right = 43.1534
+margin_bottom = 15.6818
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.513726, 0.345098, 0.392157, 1 )
+text = "Quit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause_Button" type="TextureButton" parent="User_Interface"]
+light_mask = 2
+margin_right = 11.0
+margin_bottom = 11.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="User_Interface"]
+visible = false
+margin_left = 100.0
+margin_right = 143.0
+margin_bottom = 14.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.772549, 0.6, 0.662745, 1 )
+text = "You lose!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="defeat" from="Board" to="User_Interface" method="_on_Board_defeat"]
+[connection signal="input_event" from="Board" to="Board" method="_on_Area2D_input_event"]
+[connection signal="invalid_move" from="Board" to="User_Interface" method="_on_Board_invalid_move"]
+[connection signal="victory" from="Board" to="User_Interface" method="_on_Board_victory"]
+[connection signal="pressed" from="User_Interface/Menu/VBoxContainer/Resume" to="User_Interface" method="_on_Resume_pressed"]
+[connection signal="pressed" from="User_Interface/Menu/VBoxContainer/Restart" to="User_Interface" method="_on_Restart_pressed"]
+[connection signal="pressed" from="User_Interface/Menu/VBoxContainer/Quit" to="User_Interface" method="_on_Quit_pressed"]
+[connection signal="pressed" from="User_Interface/Pause_Button" to="User_Interface" method="_on_Pause_Button_pressed"]

@@ -1,0 +1,204 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/Pixel_Font_Title.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/textures/Board.png" type="Texture" id=2]
+[ext_resource path="res://assets/Pixel_Font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/textures/Black_King.png" type="Texture" id=4]
+[ext_resource path="res://assets/scripts/Level_Tile.gd" type="Script" id=5]
+[ext_resource path="res://assets/scripts/Thanks.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.75, 21 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Title" type="Label" parent="."]
+margin_left = 31.0
+margin_top = 30.0
+margin_right = 209.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.729412, 0.588235, 0.623529, 1 )
+custom_colors/font_color_shadow = Color( 0.556863, 0.407843, 0.462745, 1 )
+text = "Level Select"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thanks" type="Label" parent="."]
+visible = false
+margin_left = 40.572
+margin_top = 140.471
+margin_right = 218.572
+margin_bottom = 171.471
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.729412, 0.588235, 0.623529, 1 )
+custom_colors/font_color_shadow = Color( 0.556863, 0.407843, 0.462745, 1 )
+text = "Thank you for playing my game!"
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="Area2D" parent="."]
+position = Vector2( 51.072, 98.7767 )
+script = ExtResource( 5 )
+
+[node name="Tile" type="Sprite" parent="1"]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 87, 108, 21, 42 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="1"]
+visible = false
+position = Vector2( 0, 9.5 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="1"]
+margin_left = -2.0
+margin_top = -15.0
+margin_right = 7.0
+margin_bottom = -4.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.729412, 0.588235, 0.623529, 1 )
+custom_colors/font_color_shadow = Color( 0.556863, 0.407843, 0.462745, 1 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="Area2D" parent="."]
+position = Vector2( 84.9262, 98.7767 )
+script = ExtResource( 5 )
+Level = 2
+Level_Name = "Level2"
+
+[node name="Tile" type="Sprite" parent="2"]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 87, 108, 21, 42 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="2"]
+visible = false
+position = Vector2( 0, 9.5 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="2"]
+margin_left = -2.0
+margin_top = -15.0
+margin_right = 7.0
+margin_bottom = -4.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.729412, 0.588235, 0.623529, 1 )
+custom_colors/font_color_shadow = Color( 0.556863, 0.407843, 0.462745, 1 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="Area2D" parent="."]
+position = Vector2( 119.176, 98.7767 )
+script = ExtResource( 5 )
+Level = 3
+Level_Name = "Level3"
+
+[node name="Tile" type="Sprite" parent="3"]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 87, 108, 21, 42 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="3"]
+visible = false
+position = Vector2( 0, 9.5 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="3"]
+margin_left = -2.0
+margin_top = -15.0
+margin_right = 7.0
+margin_bottom = -4.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.729412, 0.588235, 0.623529, 1 )
+custom_colors/font_color_shadow = Color( 0.556863, 0.407843, 0.462745, 1 )
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4" type="Area2D" parent="."]
+position = Vector2( 154.176, 98.7767 )
+script = ExtResource( 5 )
+Level = 4
+Level_Name = "Level4"
+
+[node name="Tile" type="Sprite" parent="4"]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 87, 108, 21, 42 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="4"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="4"]
+visible = false
+position = Vector2( 0, 9.5 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="4"]
+margin_left = -2.0
+margin_top = -15.0
+margin_right = 7.0
+margin_bottom = -4.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.729412, 0.588235, 0.623529, 1 )
+custom_colors/font_color_shadow = Color( 0.556863, 0.407843, 0.462745, 1 )
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5" type="Area2D" parent="."]
+position = Vector2( 189.426, 98.7767 )
+script = ExtResource( 5 )
+Level = 5
+Level_Name = "Level5"
+
+[node name="Tile" type="Sprite" parent="5"]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 87, 108, 21, 42 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="5"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="5"]
+visible = false
+position = Vector2( 0, 9.5 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="5"]
+margin_left = -2.0
+margin_top = -15.0
+margin_right = 7.0
+margin_bottom = -4.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.729412, 0.588235, 0.623529, 1 )
+custom_colors/font_color_shadow = Color( 0.556863, 0.407843, 0.462745, 1 )
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="input_event" from="1" to="1" method="_on_1_input_event"]
+[connection signal="input_event" from="2" to="2" method="_on_1_input_event"]
+[connection signal="input_event" from="3" to="3" method="_on_1_input_event"]
+[connection signal="input_event" from="4" to="4" method="_on_1_input_event"]
+[connection signal="input_event" from="5" to="5" method="_on_1_input_event"]

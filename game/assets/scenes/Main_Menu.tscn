@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/Pixel_Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/textures/Button.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/Button_Pressed.png" type="Texture" id=3]
+[ext_resource path="res://assets/Pixel_Font_Title.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/scripts/Play_Button.gd" type="Script" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Title" type="Label" parent="."]
+margin_left = 50.0
+margin_top = 20.0
+margin_right = 190.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.729412, 0.588235, 0.623529, 1 )
+custom_colors/font_color_shadow = Color( 0.556863, 0.407843, 0.462745, 1 )
+text = "CHETRIS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Subtitle" type="Label" parent="."]
+margin_left = 8.40897
+margin_top = 51.0
+margin_right = 235.409
+margin_bottom = 65.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.513726, 0.345098, 0.392157, 1 )
+text = "Get to the king before you run out of pieces..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Label" parent="."]
+margin_left = 6.62515
+margin_top = 113.433
+margin_right = 233.625
+margin_bottom = 166.433
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.513726, 0.345098, 0.392157, 1 )
+text = "A game by Austin Long
+
+Music by Eric Matyas at www.soundimage.org
+Art by Silverm at silverm.itch.io"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="TextureButton" parent="."]
+margin_left = 103.212
+margin_top = 79.9584
+margin_right = 148.212
+margin_bottom = 94.9584
+size_flags_horizontal = 4
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+expand = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Play"]
+margin_left = 12.3982
+margin_top = 2.73505
+margin_right = 52.3982
+margin_bottom = 16.7351
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.513726, 0.345098, 0.392157, 1 )
+text = "Play"
+[connection signal="pressed" from="Play" to="Play" method="_on_Play_pressed"]
